@@ -3,6 +3,7 @@
 /* mixins, variables, etc. */
 
 $grayMediumLight: #eaeaea;
+$lightGray: #999;   /* or @grayLight: #999; in bootstrap*/
 
 @mixin box_sizing {
   -moz-box-sizing: border-box;
@@ -18,9 +19,6 @@ $grayMediumLight: #eaeaea;
   @include box_sizing;
 }
 
-/* vars */
-
-$lightGray: #999;   /* or @grayLight: #999; in bootstrap*/
 
 /* universal */
 
@@ -150,6 +148,22 @@ input {
 .field_with_errors {
   @extend .control-group;
   @extend .error;
+}
+
+
+/* users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
 }
 
 /* footer */

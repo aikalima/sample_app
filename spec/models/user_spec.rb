@@ -119,4 +119,13 @@ describe User do
     it { should_not be_valid }
   end
 
+  describe "with admin attribute set to 'true'" do
+    before do
+      @user.save!
+      @user.toggle!(:admin)
+    end
+
+    it { should be_admin }
+  end
+
 end
